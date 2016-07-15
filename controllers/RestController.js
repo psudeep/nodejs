@@ -16,3 +16,19 @@ exports.makeGetCalls = function(req, res, next){
 		res.status(200).json(data);
 	});
 };
+
+exports.makePostCall = function(req, res, next){
+	// set content-type header and data as json in args parameter 
+	var args = {
+		data: { test: "hello" },
+		headers: { "Content-Type": "application/json" }
+	};
+	 
+	client.post("http://remote.site/rest/xml/method", args, function (data, response) {
+		// parsed response body as js object 
+		console.log(data);
+		// raw response 
+		//console.log(response);
+		res.status(200).json(data);
+	});
+};
