@@ -2,7 +2,7 @@
 @Company: Medimojo
 @Author: Prashant Sudeep
 */
-
+var compression = require('compression');
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
@@ -11,6 +11,8 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
 app = express();
+// compress all requests 
+app.use(compression())
 
 // load basic configs
 global.config = require('./config');
