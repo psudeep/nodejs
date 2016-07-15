@@ -12,7 +12,7 @@ var bodyParser = require('body-parser');
 
 app = express();
 // compress all requests 
-app.use(compression())
+app.use(compression());
 
 // load basic configs
 global.config = require('./config');
